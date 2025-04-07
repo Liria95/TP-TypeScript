@@ -1,0 +1,117 @@
+/* VARIABLES */
+:root {
+  --color-fondo-claro: #f4f4f9;
+  --color-fondo-oscuro: #1e1e1e;
+  --color-texto-claro: #333;
+  --color-texto-oscuro: #f0f0f0;
+  --color-primario: #2c3e50;
+  --color-secundario: #34495e;
+  --color-tarjeta: #ffffff;
+  --color-tarjeta-oscura: #2a2a2a;
+  --sombra-clara: rgba(0, 0, 0, 0.1);
+  --sombra-oscura: rgba(255, 255, 255, 0.05);
+  --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-texto-oscuro);
+}
+body.dark-mode #salida > div {
+  background-color: var(--color-tarjeta-oscura);
+  box-shadow: 0 4px 10px var(--sombra-oscura);
+}
+body.dark-mode h1,
+body.dark-mode h3 {
+  color: var(--color-texto-oscuro);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: var(--fuente);
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-claro);
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* TÍTULO */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  color: var(--color-primario);
+}
+
+/* CONTENEDOR GENERAL */
+#salida {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* TARJETA INDIVIDUAL */
+#salida > div {
+  background-color: var(--color-tarjeta);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--sombra-clara);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#salida > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* NOMBRE DEL ANIMAL */
+#salida h3 {
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  color: var(--color-secundario);
+  margin-bottom: 10px;
+}
+
+/* SONIDO */
+#salida p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* IMAGEN */
+#salida img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+  transition: transform 0.3s ease;
+}
+#salida img:hover {
+  transform: scale(1.07);
+}
+
+/* RESPONSIVE MEDIA QUERY */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #salida {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  #salida {
+    grid-template-columns: 1fr;
+  }
+  #salida img {
+    max-width: 90%;
+  }
+}
