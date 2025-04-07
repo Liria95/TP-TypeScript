@@ -1,0 +1,10 @@
+Trabajo Práctico - Programación 3
+Alumno/a: Marianela Dagatti,Liria Olivera.
+
+Repositorio del proyecto:
+https://github.com/Liria95/TP-TypeScript
+
+Descripción:
+Este proyecto implementa una interfaz `Animal` con tres clases concretas (`Perro`, `Gato` y `Vaca`). Se hace uso de enums, tipos genéricos y una estructura de datos Fila<T>. Además, se manipula el DOM para mostrar información visualmente con imágenes y estilos. El código incluye validaciones y mejoras estéticas como íconos ❌ para los elementos removidos.
+
+Entrega lista para evaluación ✅
